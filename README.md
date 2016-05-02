@@ -28,5 +28,5 @@ I would rather have gotten one of the view engines to work as they add a lot mor
 
 I initially built this app with the routes hardcoded, but I felt I could improve on this.
 
-As I had a passing test suite, I decided to refactor the routes into a single dynamic url. This route checks if the route matches any folders within the structure and returns the relevant index.md file.
+As I had a passing test suite, I decided to refactor the routes into a single dynamic url. This route checks if the url matches any folders within the structure and returns the relevant index.md file.
 
