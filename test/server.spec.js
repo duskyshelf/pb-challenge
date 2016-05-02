@@ -2,7 +2,7 @@ var app = require(__dirname + '/../app.js'),
     request = require('request'),
     expect = require("chai").expect;
 
-describe('/static-content-challenge', function() {
+describe('static-content-challenge', function () {
 
   describe('requesting valid URLs', function () {
     it('about-page should return 200', function (done) {
@@ -27,9 +27,17 @@ describe('/static-content-challenge', function() {
     });
   });
 
-  describe('serving content', function () {
+  describe('requesting invalid urls', function () {
+    it('returns a 404 error', function (done) {
+      request('http://localhost:3000/broken-url', function (err, res, body) {
+        expect(res.statusCode).to.equal(404);
+        done();
+      });
+    });
+  });
 
-    it('loads the template frame on /about-page', function(done) {
+  describe('serving content', function () {
+    it('loads the template frame on /about-page', function (done) {
       request('http://localhost:3000/about-page', function (err, res, body) {
         expect(body).to.contain("Welcome to Acme");
         done();
