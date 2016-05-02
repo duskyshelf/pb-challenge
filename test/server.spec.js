@@ -1,6 +1,6 @@
 var app = require(__dirname + '/../app.js'),
     request = require('request'),
-    expect = require("chai").expect;
+    expect = require('chai').expect;
 
 describe('static-content-challenge', function () {
 

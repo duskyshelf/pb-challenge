@@ -1,7 +1,7 @@
 var fs = require('fs');
 var express = require('express');
 var app = express();
-var markdown = require( "markdown" ).markdown;
+var markdown = require('markdown').markdown;
 
 // routing
 app.get('/:route', function (req, res) {
