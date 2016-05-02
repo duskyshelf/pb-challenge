@@ -4,13 +4,13 @@
 
 I used a simple node/express setup with mocha/chai for testing.
 
-To run, use the following console commands:
-1) npm install
-2) npm start
-and then visit one of the 3 relevant urls:
-http://localhost:3000/about-page
-http://localhost:3000/jobs
-http://localhost:3000/valves
+To run, use the following console commands:  
+1) npm install  
+2) npm start  
+and then visit one of the 3 relevant urls:  
+http://localhost:3000/about-page  
+http://localhost:3000/jobs  
+http://localhost:3000/valves  
 
 Tests can be run by using:
 1) npm test
