@@ -12,8 +12,8 @@ http://localhost:3000/about-page
 http://localhost:3000/jobs  
 http://localhost:3000/valves  
 
-Tests can be run by using:
-1) npm test
+Tests can be run by using:  
+1) npm test  
 (NB the app must not be running during the tests otherwise you will get an error message)
 
 **Challenges**
