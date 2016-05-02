@@ -1,27 +1,52 @@
 var app = require(__dirname + '/../app.js'),
-    http = require('http'),
+    request = require('request'),
     expect = require("chai").expect;
 
-describe('express server routing', function () {
+describe('static-content-challenge', function() {
 
-  it('about-page URL should return 200', function (done) {
-    http.get('http://localhost:3000/about-page', function (res) {
-      expect(res.statusCode).to.equal(200);
-      done();
+  describe('requesting valid URLs', function () {
+    it('about-page should return 200', function (done) {
+      request('http://localhost:3000/about-page', function (err, res, body) {
+        expect(res.statusCode).to.equal(200);
+        done();
+      });
+    });
+
+    it('jobs should return 200', function (done) {
+      request('http://localhost:3000/jobs', function (err, res, body) {
+        expect(res.statusCode).to.equal(200);
+        done();
+      });
+    });
+
+    it('valves should return 200', function (done) {
+      request('http://localhost:3000/valves', function (err, res, body) {
+        expect(res.statusCode).to.equal(200);
+        done();
+      });
     });
   });
 
-  it('jobs URL should return 200', function (done) {
-    http.get('http://localhost:3000/jobs', function (res) {
-      expect(res.statusCode).to.equal(200);
-      done();
+  describe('serving content', function () {
+    it('about-page returns correct content', function (done) {
+      request('http://localhost:3000/about-page', function (err, res, body) {
+        expect(body).to.contain("This is the About page");
+        done();
+      });
     });
-  });
 
-  it('valves URL should return 200', function (done) {
-    http.get('http://localhost:3000/valves', function (res) {
-      expect(res.statusCode).to.equal(200);
-      done();
+    it('jobs returns correct content', function (done) {
+      request('http://localhost:3000/jobs', function (err, res, body) {
+        expect(body).to.contain("Jobs at Acme Co.");
+        done();
+      });
+    });
+
+    it('valves returns correct content', function (done) {
+      request('http://localhost:3000/valves', function (err, res, body) {
+        expect(body).to.contain("Valves");
+        done();
+      });
     });
   });
 
