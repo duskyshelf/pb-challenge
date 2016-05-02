@@ -1,0 +1,19 @@
+{
+  "name": "pb-challenge",
+  "version": "1.0.0",
+  "description": "Static content challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duskyshelf/pb-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/duskyshelf/pb-challenge.git/issues"
+  },
+  "homepage": "https://github.com/duskyshelf/pb-challenge.git#readme"
+}
