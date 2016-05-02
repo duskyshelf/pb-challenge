@@ -15,6 +15,10 @@ app.get('/:route', function (req, res) {
   }
 });
 
+app.get('*', function (req, res) {
+  res.status(404).send('404 Page Not Found');
+});
+
 // helpers
 var contentFolderContains = function (route) {
   var folders = fs.readdirSync('content');

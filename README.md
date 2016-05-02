@@ -18,11 +18,11 @@ Tests can be run by using:
 
 **Challenges**
 
-I initially tried to use a view engine (e.g. mustache, handlebars, etc) to pull the data into the template.html file, but most solutions I found required changing the file structure within the application.
+I initially tried to use a view engine (e.g. mustache, handlebars, etc) to pull the data into the template.html file, but most solutions I found required changing the file structure within the application which I wanted to avoid.
 
-After a few tests, I eventually decided to build my own using "node fs" to read template.html directly and replace the {{content}} tag with the text from the markdown files.
+After a few tests, I eventually decided to build my own using the node.js file system functions to read template.html directly and replace the {{content}} tag with the text from the markdown files.
 
-I would rather have gotten one of the view engines to work as they add a lot more functionality and can be used more dynamically, but this was the simplest solution I could find at this point.
+If I wanted to build this into a larger app, I would probably go back and build in a view engine as they add a lot of useful functionality and make it easier to create more complex templates.
 
 **Final Refactor**
 
