@@ -1,17 +1,26 @@
 # Static Content challenge
 
-**NB: Please do not fork this repository, to avoid your solution being visible from this repository's GitHub page. Please clone this repository and submit your solution as a separate repository.**
+**Build**
 
-The challenge here is to create a node.js application that displays HTML pages at URLs that match the names of the folders in the `content` folder. The content of these pages should come from a combination of the template HTML file and a markdown file containing the content.
+I used a simple node/express setup with mocha/chai for testing.
 
-For example, for a folder called `about-page`, a request to `/about-page` would return a HTML page created from the `template.html` template and the `about-page/index.md` content file. The `template.html` file contains a `{{content}}` placeholder that would be replaced by the content for each page.
+To run, use the following console commands:
+1) npm install
+2) npm start
+and then visit one of the 3 relevant urls:
+http://localhost:3000/about-page
+http://localhost:3000/jobs
+http://localhost:3000/valves
 
-This repository contains a `template.html` template file and a `content` folder with sub-folders containing `index.md` markdown files.
+Tests can be run by using:
+1) npm test
+(NB the app must not be running during the tests otherwise you will get an error message)
 
-The application should be shipped with three tests:
+**Challenges**
 
-* one that verifies that requests to valid URLs return a 200 HTTP status code
-* one that verifies that requests to valid URLS return a body that contains the HTML generated from the relevant `index.md` markdown file
-* one that verifies that requests to URLs that do not match content folders return a 404 HTTP status code
+I initially tried to use a view engine (e.g. mustache, handlebars, etc) to pull the data into the template.html file, but most solutions I found required changing the file structure within the application.
 
-Your application may make use of open-source code libraries. It is entirely up to you how the application performs the challenge.
+After a few tests, I eventually decided to build my own using "node fs" to read template.html directly and replace the {{content}} tag with the text from the markdown files.
+
+I would rather have gotten one of the view engines to work as they add a lot more functionality and can be used more dynamically, but this was the simplest solution I could find at this point.
+
