@@ -5,7 +5,7 @@ var app = require(__dirname + '/../app.js'),
 describe('static-content-challenge', function () {
 
   describe('requesting valid URLs', function () {
-    it('about-page should return 200', function (done) {
+    it('/about-page should return 200', function (done) {
       request('http://localhost:3000/about-page', function (err, res, body) {
         expect(res.statusCode).to.equal(200);
         done();
